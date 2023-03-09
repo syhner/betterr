@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /* Type Checking */
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    /* Modules */
+    "module": "CommonJS",
+
+    /* Emit */
+    "noEmit": true,
+    "sourceMap": true,
+
+    /* JavaScript Support */
+
+    /* Editor Support */
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Backwards Compatibility */
+
+    /* Language and Environment */
+    "target": "es2016",
+
+    /* Compiler Diagnostics */
+
+    /* Projects */
+
+    /* Output Formatting */
+
+    /* Completeness */
+    "skipLibCheck": true
+
+    /* Command Line */
+
+    /* Watch Options */
+  }
+}
