@@ -25,5 +25,3 @@ export const betterrSync = <Data>(
     return { data: null, err };
   }
 };
-
-export default betterr;

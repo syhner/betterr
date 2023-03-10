@@ -19,6 +19,9 @@ $ npm install betterr
 ## Usage
 
 ```ts
+import { betterr, betterrSync } from 'betterr';
+// const { betterr, betterrSync } = require('betterr');
+
 async function main() {
   const { data: user, err } = await betterr(() => getLoggedUser());
   //            ^?    ^? user: User | null, err: Error | null
