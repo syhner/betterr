@@ -12,7 +12,7 @@ A better way to handle errors
 
 ## Installation
 
-```
+```sh
 $ npm install betterr
 ```
 
