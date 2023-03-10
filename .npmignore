@@ -1,6 +1,8 @@
 .changeset
 .github
+.turbo
+pnpm-lock.yaml
 src
 tests
-pnpm-lock.yaml
 tsconfig.json
+turbo.json
