@@ -1,13 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { betterr, betterrSync } from '.';
-import { Expect, Equal } from '../tests/test-types';
+import { Expect, Equal } from '../tests/types';
+import * as utils from '../tests/utils';
 
 const message = 'message' as const;
 
 describe('betterr', () => {
   describe('Asynchronous functions', () => {
     it('When no error is thrown, data should exist and error should be null', async () => {
-      const { data, err } = await betterr(() => echo(message));
+      const { data, err } = await betterr(() => utils.echo(message));
 
       expect(data).to.equal(message);
       expect(err).toBe(null);
@@ -22,7 +23,41 @@ describe('betterr', () => {
     });
 
     it('When an asynchronous error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => throwError(message));
+      const { data, err } = await betterr(() => utils.throwError(message));
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type BeforeReturn =
+        | Expect<Equal<typeof data, typeof message | null>>
+        | Expect<Equal<typeof err, Error | null>>;
+      if (err) return;
+      type AfterReturn =
+        | Expect<Equal<typeof data, typeof message>>
+        | Expect<Equal<typeof err, null>>;
+    });
+
+    it('When an asynchronous extended error is thrown, data should be null and error should exist', async () => {
+      const { data, err } = await betterr(() =>
+        utils.throwExtendedError(message)
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type BeforeReturn =
+        | Expect<Equal<typeof data, typeof message | null>>
+        | Expect<Equal<typeof err, Error | null>>;
+      if (err) return;
+      type AfterReturn =
+        | Expect<Equal<typeof data, typeof message>>
+        | Expect<Equal<typeof err, null>>;
+    });
+
+    it('When an asynchronous error is thrown, data should be null and error should exist', async () => {
+      const { data, err } = await betterr(() => utils.throwError(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -38,7 +73,7 @@ describe('betterr', () => {
     });
 
     it('When an asynchronous non-error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => throwNonError(message));
+      const { data, err } = await betterr(() => utils.throwNonError(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -56,7 +91,7 @@ describe('betterr', () => {
 
   describe('Synchronous functions', () => {
     it('When no error is thrown, data should exist and error should be null', async () => {
-      const { data, err } = await betterr(() => echoSync(message));
+      const { data, err } = await betterr(() => utils.echoSync(message));
 
       expect(data).to.equal(message);
       expect(err).toBe(null);
@@ -71,7 +106,25 @@ describe('betterr', () => {
     });
 
     it('When a synchronous error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => throwErrorSync(message));
+      const { data, err } = await betterr(() => utils.throwErrorSync(message));
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type BeforeReturn =
+        | Expect<Equal<typeof data, typeof message | null>>
+        | Expect<Equal<typeof err, Error | null>>;
+      if (err) return;
+      type AfterReturn =
+        | Expect<Equal<typeof data, typeof message>>
+        | Expect<Equal<typeof err, null>>;
+    });
+
+    it('When a synchronous extended error is thrown, data should be null and error should exist', async () => {
+      const { data, err } = await betterr(() =>
+        utils.throwExtendedErrorSync(message)
+      );
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -87,7 +140,9 @@ describe('betterr', () => {
     });
 
     it('When a synchronous non-error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => throwNonErrorSync(message));
+      const { data, err } = await betterr(() =>
+        utils.throwNonErrorSync(message)
+      );
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -107,7 +162,7 @@ describe('betterr', () => {
 describe('betterrSync', () => {
   describe('Synchronous functions', () => {
     it('When no error is thrown, data should exist and error should be null', () => {
-      const { data, err } = betterrSync(() => echoSync(message));
+      const { data, err } = betterrSync(() => utils.echoSync(message));
 
       expect(data).to.equal(message);
       expect(err).toBe(null);
@@ -122,7 +177,25 @@ describe('betterrSync', () => {
     });
 
     it('When a synchronous error is thrown, data should be null and error should exist', () => {
-      const { data, err } = betterrSync(() => throwErrorSync(message));
+      const { data, err } = betterrSync(() => utils.throwErrorSync(message));
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type BeforeReturn =
+        | Expect<Equal<typeof data, typeof message | null>>
+        | Expect<Equal<typeof err, Error | null>>;
+      if (err) return;
+      type AfterReturn =
+        | Expect<Equal<typeof data, typeof message>>
+        | Expect<Equal<typeof err, null>>;
+    });
+
+    it('When a synchronous extended error is thrown, data should be null and error should exist', () => {
+      const { data, err } = betterrSync(() =>
+        utils.throwExtendedErrorSync(message)
+      );
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -138,7 +211,7 @@ describe('betterrSync', () => {
     });
 
     it('When a synchronous non-error is thrown, data should be null and error should exist', () => {
-      const { data, err } = betterrSync(() => throwNonErrorSync(message));
+      const { data, err } = betterrSync(() => utils.throwNonErrorSync(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -154,31 +227,3 @@ describe('betterrSync', () => {
     });
   });
 });
-
-async function echo<T>(message: T) {
-  return message;
-}
-
-function echoSync<T>(message: T) {
-  return message;
-}
-
-async function throwError<T extends string>(message: T) {
-  throw new Error(message);
-  return message;
-}
-
-function throwErrorSync<T extends string>(message: T) {
-  throw new Error(message);
-  return message;
-}
-
-async function throwNonError<T>(message: T) {
-  throw message;
-  return message;
-}
-
-function throwNonErrorSync<T>(message: T) {
-  throw message;
-  return message;
-}
