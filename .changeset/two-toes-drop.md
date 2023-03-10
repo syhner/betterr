@@ -1,5 +1,0 @@
----
-"betterr": minor
----
-
-Configure release
