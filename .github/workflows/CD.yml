@@ -28,12 +28,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm lint
-
-      - name: Test
-        run: pnpm test
-
       - name: Create release pull request or publish to npm
         uses: changesets/action@v1
         with:
