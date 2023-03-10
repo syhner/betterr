@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.0
+
+### Major Changes
+
+- 5262d64: Remove the default export, so that there is a single way to import (by destructuring)
+
 ## 1.0.2
 
 ### Patch Changes
