@@ -34,9 +34,6 @@ jobs:
       - name: Test
         run: pnpm test
 
-      - name: Build
-        run: pnpm build
-
       - name: Create release pull request or publish to npm
         uses: changesets/action@v1
         with:
