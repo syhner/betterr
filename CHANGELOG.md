@@ -1,5 +1,11 @@
 # betterr
 
+## 1.0.2
+
+### Patch Changes
+
+- 2e0880e: README syntax highlighting for install script
+
 ## 1.0.1
 
 ### Patch Changes
