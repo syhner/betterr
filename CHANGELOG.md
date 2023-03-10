@@ -1,5 +1,11 @@
 # betterr
 
+## 1.0.1
+
+### Patch Changes
+
+- 8a2cedf: README bug fix
+
 ## 1.0.0
 
 ### Major Changes
