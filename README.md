@@ -41,8 +41,8 @@ async function main() {
 Both `betterr` and `betterrSync` are generic, so the type of `data` can be provided
 
 ```ts
-const { data, err } = betterrSync<User>(() => {
+const { data, err } = betterrSync<User>(() => ({
   //    ^? data: User
-  userId: '1';
-});
+  userId: '1',
+}));
 ```
