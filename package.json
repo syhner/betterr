@@ -3,6 +3,7 @@
   "name": "betterr",
   "version": "0.1.0",
   "description": "A better way to handle errors",
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
