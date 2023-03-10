@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "betterr",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A better way to handle errors",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,6 +9,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
+    "release": "pnpm build && pnpm changeset publish",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
