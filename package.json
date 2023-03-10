@@ -15,7 +15,12 @@
     "test:watch": "vitest watch"
   },
   "keywords": [
-    "error"
+    "async-await",
+    "error-handling",
+    "errors",
+    "exceptions",
+    "try-catch",
+    "typescript"
   ],
   "author": "syhner",
   "license": "MIT",
