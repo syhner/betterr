@@ -37,5 +37,6 @@
     /* Command Line */
 
     /* Watch Options */
-  }
+  },
+  "include": ["src", "tests"]
 }
