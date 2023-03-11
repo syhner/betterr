@@ -9,9 +9,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "format": "prettier --write \"**/*.{json,md,ts,yml}\"",
+    "format:check": "prettier --check \"**/*.{json,md,ts,yml}\"",
+    "format:write": "prettier --write \"**/*.{json,md,ts,yml}\"",
     "lint": "tsc",
-    "release": "turbo format lint test build && changeset publish",
+    "release": "turbo format:check lint test build && changeset publish",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
