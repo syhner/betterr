@@ -5,6 +5,9 @@
       "inputs": ["src/**/*.ts"],
       "outputs": ["dist"]
     },
+    "format": {
+      "inputs": ["*.json", "*.md", "*.ts", "*.yml"]
+    },
     "lint": {
       "inputs": ["src/**/*.ts", "tests/**/*.ts"]
     },

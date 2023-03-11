@@ -3,7 +3,7 @@ export type BetterrReturn<Data, Err extends Error = Error> =
   | { data: null; err: Err };
 
 export const betterr = async <Data>(
-  callback: () => Data | Promise<Data>
+  callback: () => Data | Promise<Data>,
 ): Promise<BetterrReturn<Data, Error>> => {
   try {
     const data = await callback();
@@ -15,7 +15,7 @@ export const betterr = async <Data>(
 };
 
 export const betterrSync = <Data>(
-  callback: () => Data
+  callback: () => Data,
 ): BetterrReturn<Data, Error> => {
   try {
     const data = callback();

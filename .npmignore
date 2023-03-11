@@ -1,8 +1,10 @@
-.changeset
-.github
-.turbo
+.changeset/
+.github/
+.turbo/
+src/
+tests/
+.prettierignore
+.prettierrc.json
 pnpm-lock.yaml
-src
-tests
 tsconfig.json
 turbo.json

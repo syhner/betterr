@@ -15,12 +15,12 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
@@ -33,18 +33,18 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
     it('When an asynchronous extended error is thrown, data should be null and error should exist', async () => {
       const { data, err } = await betterr(() =>
-        utils.throwExtendedError(message)
+        utils.throwExtendedError(message),
       );
 
       expect(data).toBe(null);
@@ -53,12 +53,12 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
@@ -71,12 +71,12 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
@@ -89,12 +89,12 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
   });
@@ -108,12 +108,12 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
@@ -126,18 +126,18 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
     it('When a synchronous extended error is thrown, data should be null and error should exist', async () => {
       const { data, err } = await betterr(() =>
-        utils.throwExtendedErrorSync(message)
+        utils.throwExtendedErrorSync(message),
       );
 
       expect(data).toBe(null);
@@ -146,18 +146,18 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
     it('When a synchronous non-error is thrown, data should be null and error should exist', async () => {
       const { data, err } = await betterr(() =>
-        utils.throwNonErrorSync(message)
+        utils.throwNonErrorSync(message),
       );
 
       expect(data).toBe(null);
@@ -166,12 +166,12 @@ describe('betterr', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
   });
@@ -187,12 +187,12 @@ describe('betterrSync', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
@@ -205,18 +205,18 @@ describe('betterrSync', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
     it('When a synchronous extended error is thrown, data should be null and error should exist', () => {
       const { data, err } = betterrSync(() =>
-        utils.throwExtendedErrorSync(message)
+        utils.throwExtendedErrorSync(message),
       );
 
       expect(data).toBe(null);
@@ -225,12 +225,12 @@ describe('betterrSync', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
 
@@ -243,12 +243,12 @@ describe('betterrSync', () => {
 
       type testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
-        Expect<Equal<typeof err, Error | null>>
+        Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
       type testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
-        Expect<Equal<typeof err, null>>
+        Expect<Equal<typeof err, null>>,
       ];
     });
   });

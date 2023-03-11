@@ -9,8 +9,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
+    "format": "prettier --write \"**/*.{json,md,ts,yml}\"",
     "lint": "tsc",
-    "release": "turbo lint test build && changeset publish",
+    "release": "turbo format lint test build && changeset publish",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
@@ -26,6 +27,7 @@
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "prettier": "^2.8.4",
     "tsup": "^6.6.3",
     "turbo": "^1.8.3",
     "typescript": "^4.9.5",
