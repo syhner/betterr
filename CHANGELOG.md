@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.1
+
+### Patch Changes
+
+- 2d52b6d: README improvements
+
 ## 2.0.0
 
 ### Major Changes

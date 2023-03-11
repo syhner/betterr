@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/package",
   "name": "betterr",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A better way to handle errors",
   "private": false,
   "main": "dist/index.js",
