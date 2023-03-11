@@ -7,7 +7,7 @@ A better way to handle errors
 - **File structure remains flat**, unlike with nested try...catch blocks
 - **Variables are declared with const**, unlike with non-nested try...catch blocks
 - **Both data and errors are available at the top level**, unlike with try..catch or promises
-- **Work with errors that are always instances of `Error` with full type safety**, unlike with try...catch or promises
+- **Work with errors that are always instances of `Error`**, without compromising type-safety, unlike with try...catch or promises
 - **Work with data that is non-nullable**, once an early return occurs in the case of an error
 
 ## Installation
@@ -41,7 +41,7 @@ async function main() {
 
 ## TypeScript
 
-Both `betterr` and `betterrSync` are generic, so the type of `data` can be provided
+Both `betterr` and `betterrSync` are generic, so the type of `data` can be provided so long as the callback return type is assignable to the generic parameter
 
 ```ts
 const { data, err } = betterrSync<User>(() => ({
