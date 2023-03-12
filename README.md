@@ -4,11 +4,11 @@ A better way to handle errors
 
 ## Advantages
 
-- **File structure remains flat**, unlike with nested try...catch blocks
-- **Variables are declared with const**, unlike with non-nested try...catch blocks
+- **File structure remains flat**, unlike with nested try...catch
+- **Both data and errors are declared with `const`**, unlike with non-nested try...catch
+- **Both data and errors are non-nullable**, once an early return occurs if the other is null
 - **Both data and errors are available at the top level**, unlike with try..catch or promises
-- **Work with errors that are always instances of `Error`**, without compromising type-safety, unlike with try...catch or promises
-- **Work with data that is non-nullable**, once an early return occurs in the case of an error
+- **Work with errors that are always `Error` objects**, without compromising type-safety, unlike with try...catch or promises
 
 ## Installation
 
@@ -23,7 +23,7 @@ import { betterr, betterrSync } from 'betterr';
 // const { betterr, betterrSync } = require('betterr');
 
 async function main() {
-  const { data: user, err } = await betterr(() => getLoggedUser());
+  const { data: user, err } = await betterr(() => getRandomUser());
   //            ^?    ^? user: User | null, err: Error | null
 
   if (err) {
@@ -46,6 +46,6 @@ Both `betterr` and `betterrSync` are generic, so the type of `data` can be provi
 ```ts
 const { data, err } = betterrSync<User>(() => ({
   //    ^? data: User
-  userId: '1',
+  userId: 1,
 }));
 ```
