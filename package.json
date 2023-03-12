@@ -14,7 +14,7 @@
     "format:write": "prettier --write \"**/*.{json,md,ts,yml}\"",
     "lint": "tsc",
     "release": "turbo format:check lint test build && changeset publish",
-    "test": "vitest run",
+    "test": "vitest run --coverage",
     "test:watch": "vitest watch"
   },
   "keywords": [
@@ -29,6 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@vitest/coverage-c8": "^0.29.2",
     "prettier": "^2.8.4",
     "tsup": "^6.6.3",
     "turbo": "^1.8.3",
