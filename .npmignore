@@ -1,6 +1,7 @@
 .changeset/
 .github/
 .turbo/
+coverage/
 src/
 tests/
 .prettierignore
