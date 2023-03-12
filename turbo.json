@@ -12,7 +12,8 @@
       "inputs": ["src/**/*.ts", "tests/**/*.ts"]
     },
     "test": {
-      "inputs": ["src/**/*.ts", "tests/**/*.ts"]
+      "inputs": ["src/**/*.ts", "tests/**/*.ts"],
+      "outputs": ["coverage"]
     }
   }
 }
