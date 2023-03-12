@@ -2,6 +2,8 @@
 
 A better way to handle errors
 
+![CD](https://github.com/Syhner/betterr/actions/workflows/CD.yml/badge.svg)
+
 ## Advantages
 
 - **File structure remains flat**, unlike with nested try...catch
