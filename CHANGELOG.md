@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.2
+
+### Patch Changes
+
+- 717730c: README tweak
+
 ## 2.0.1
 
 ### Patch Changes
