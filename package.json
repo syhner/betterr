@@ -12,7 +12,7 @@
     "ci": "turbo format:check lint test build",
     "format:check": "prettier --check \"**/*.{json,md,ts,yml}\"",
     "format:write": "prettier --write \"**/*.{json,md,ts,yml}\"",
-    "lint": "tsc",
+    "lint": "eslint .",
     "release": "turbo format:check lint test build && changeset publish",
     "test": "vitest run --coverage",
     "test:watch": "vitest watch"
@@ -29,7 +29,12 @@
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
     "@vitest/coverage-c8": "^0.29.2",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-turbo": "^0.0.9",
     "prettier": "^2.8.4",
     "tsup": "^6.6.3",
     "turbo": "^1.8.3",

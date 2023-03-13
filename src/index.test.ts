@@ -13,12 +13,12 @@ describe('betterr', () => {
       expect(data).to.equal(message);
       expect(err).toBe(null);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -31,12 +31,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -51,12 +51,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -69,12 +69,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -87,12 +87,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -106,12 +106,12 @@ describe('betterr', () => {
       expect(data).to.equal(message);
       expect(err).toBe(null);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -124,12 +124,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -144,12 +144,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -164,12 +164,12 @@ describe('betterr', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -185,12 +185,12 @@ describe('betterrSync', () => {
       expect(data).to.equal(message);
       expect(err).toBe(null);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -203,12 +203,12 @@ describe('betterrSync', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -223,12 +223,12 @@ describe('betterrSync', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];
@@ -241,12 +241,12 @@ describe('betterrSync', () => {
       expect(err).toBeInstanceOf(Error);
       expect(err?.message).to.equal(message);
 
-      type testsBefore = [
+      type _testsBefore = [
         Expect<Equal<typeof data, typeof message | null>>,
         Expect<Equal<typeof err, Error | null>>,
       ];
       if (err) return;
-      type testsAfter = [
+      type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
         Expect<Equal<typeof err, null>>,
       ];

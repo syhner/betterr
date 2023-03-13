@@ -4,6 +4,7 @@
 coverage/
 src/
 tests/
+.eslintrc.json
 .prettierignore
 .prettierrc.json
 pnpm-lock.yaml
