@@ -41,3 +41,4 @@ jobs:
           FOLDER: coverage
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: 'Test coverage: ({sha})'
+          NODE_ENV: CI
