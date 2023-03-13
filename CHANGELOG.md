@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.4
+
+### Patch Changes
+
+- 0a4b841: README tweak for build status
+
 ## 2.0.3
 
 ### Patch Changes
