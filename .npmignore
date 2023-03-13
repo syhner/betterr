@@ -9,3 +9,4 @@ tests/
 pnpm-lock.yaml
 tsconfig.json
 turbo.json
+vite.config.ts
