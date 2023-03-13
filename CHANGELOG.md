@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.5
+
+### Patch Changes
+
+- 93f8e57: README badges
+
 ## 2.0.4
 
 ### Patch Changes
