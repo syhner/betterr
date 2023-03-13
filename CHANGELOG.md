@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.6
+
+### Patch Changes
+
+- 1f59c2e: README fix badges
+
 ## 2.0.5
 
 ### Patch Changes
