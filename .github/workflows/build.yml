@@ -1,13 +1,9 @@
-name: CI
+name: build
 
 on:
-  push:
-    branches:
-      - '**'
-  pull_request:
+  release:
     types:
-      - opened
-      - synchronize
+      - 'published'
 
 jobs:
   build:
@@ -30,5 +26,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run CI checks
-        run: pnpm ci
+      - name: Test and build
+        run: pnpm turbo test build
+
+      - name: Update coverage branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: coverage
+          FOLDER: coverage
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: 'Test coverage ({sha})'
