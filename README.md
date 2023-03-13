@@ -2,9 +2,9 @@
 
 A better way to handle errors
 
-![![build status](https://img.shields.io/github/actions/workflow/status/syhner/betterr/CD.yml)](https://github.com/Syhner/betterr/actions/workflows/CD.yml)
-![![coverage](https://img.shields.io/badge/dynamic/json?color=green&label=coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fraw.githubusercontent.com%2FSyhner%2Fbetterr%2Fcoverage%2Fcoverage-summary.json)](https://github.com/Syhner/betterr/tree/coverage)
-![![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/syhner/betterr)](https://security.snyk.io/package/npm/betterr)
+[![build status](https://img.shields.io/github/actions/workflow/status/syhner/betterr/CD.yml)](https://github.com/Syhner/betterr/actions/workflows/CD.yml)
+[![coverage](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fraw.githubusercontent.com%2FSyhner%2Fbetterr%2Fcoverage%2Fcoverage-summary.json)](https://github.com/Syhner/betterr/tree/coverage)
+[![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/syhner/betterr)](https://security.snyk.io/package/npm/betterr)
 
 ## Advantages
 
