@@ -2,7 +2,8 @@
 
 A better way to handle errors
 
-![CD](https://github.com/Syhner/betterr/actions/workflows/CD.yml/badge.svg)
+![build status](https://github.com/Syhner/betterr/actions/workflows/build.yml/badge.svg)
+![coverage](https://img.shields.io/badge/dynamic/json?color=green&label=coverage&query=%24.total.lines.pct&suffix=%25&url=https%3A%2F%2Fraw.githubusercontent.com%2FSyhner%2Fbetterr%2Fcoverage%2Fcoverage-summary.json)
 
 ## Advantages
 
