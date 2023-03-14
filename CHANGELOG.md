@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.7
+
+### Patch Changes
+
+- 2e38fbc: README - coverage badge links to report on github pages
+
 ## 2.0.6
 
 ### Patch Changes
