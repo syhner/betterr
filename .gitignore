@@ -1,7 +1,5 @@
 .turbo/
-.vscode/
 coverage/
 dist/
 node_modules/
 private/
-.DS_Store
