@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  istanbul-reports@3.1.5:
+    hash: 75ul7i3jv75lea22j6tgb4uqyi
+    path: patches/istanbul-reports@3.1.5.patch
+
 specifiers:
   '@changesets/cli': ^2.26.0
   '@typescript-eslint/eslint-plugin': ^5.54.1
@@ -1153,7 +1158,7 @@ packages:
       foreground-child: 2.0.0
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-report: 3.0.0
-      istanbul-reports: 3.1.5
+      istanbul-reports: 3.1.5_75ul7i3jv75lea22j6tgb4uqyi
       rimraf: 3.0.2
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
@@ -2319,13 +2324,14 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /istanbul-reports/3.1.5:
+  /istanbul-reports/3.1.5_75ul7i3jv75lea22j6tgb4uqyi:
     resolution: {integrity: sha512-nUsEMa9pBt/NOHqbcbeJEgqIlY/K7rVWUX6Lql2orY5e9roQOthbR3vtY4zzf2orPELg80fnxxk9zUyPlgwD1w==}
     engines: {node: '>=8'}
     dependencies:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.0
     dev: true
+    patched: true
 
   /joycon/3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
