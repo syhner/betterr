@@ -3,7 +3,7 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
   test: {
     coverage: {
-      reporter: ['text', 'html', 'json-summary'],
+      reporter: process.env.CI ? ['text', 'json-summary'] : ['text', 'html'],
     },
   },
 });

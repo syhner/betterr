@@ -2,7 +2,6 @@
 .github/
 .turbo/
 coverage/
-patches/
 src/
 tests/
 .eslintrc.json

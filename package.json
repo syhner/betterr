@@ -48,10 +48,5 @@
   "bugs": {
     "url": "https://github.com/Syhner/betterr/issues"
   },
-  "homepage": "https://github.com/Syhner/betterr#readme",
-  "pnpm": {
-    "patchedDependencies": {
-      "istanbul-reports@3.1.5": "patches/istanbul-reports@3.1.5.patch"
-    }
-  }
+  "homepage": "https://github.com/Syhner/betterr#readme"
 }

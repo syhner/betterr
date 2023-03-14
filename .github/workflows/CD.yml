@@ -47,5 +47,4 @@ jobs:
           BRANCH: coverage
           FOLDER: coverage
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: 'Test coverage from {sha}'
-          SKIP_EMPTY_COMMITS: true
+          MESSAGE: 'Test coverage ({sha})'
