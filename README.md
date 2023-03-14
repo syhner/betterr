@@ -11,7 +11,7 @@ A better way to handle errors
 - **File structure remains flat**, unlike with nested try...catch
 - **Both data and errors are declared with `const`**, unlike with non-nested try...catch
 - **Both data and errors are non-nullable**, once an early return occurs if the other is null
-- **Both data and errors are available at the top level**, unlike with try..catch or promises
+- **Both data and errors are available at the top level**, unlike with try...catch or promises
 - **Work with errors that are always `Error` objects**, without compromising type-safety, unlike with try...catch or promises
 
 ## Installation
