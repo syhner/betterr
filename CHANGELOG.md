@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.8
+
+### Patch Changes
+
+- 1a9df68: README tweaks
+
 ## 2.0.7
 
 ### Patch Changes
