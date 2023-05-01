@@ -13,7 +13,7 @@
     "format:check": "prettier --check \"**/*.{json,md,ts,yml}\"",
     "format:write": "prettier --write \"**/*.{json,md,ts,yml}\"",
     "lint": "eslint .",
-    "release": "pnpm ci && changeset publish",
+    "release": "pnpm run ci && changeset publish",
     "test": "vitest run --coverage",
     "test:watch": "vitest watch"
   },
