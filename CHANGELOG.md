@@ -1,5 +1,11 @@
 # betterr
 
+## 4.0.0
+
+### Major Changes
+
+- 73b4ee1: Generic parameter for error must extend the built-in Error type
+
 ## 3.0.1
 
 ### Patch Changes
