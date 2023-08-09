@@ -1,0 +1,5 @@
+---
+'betterr': patch
+---
+
+README tweak
