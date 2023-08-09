@@ -46,7 +46,7 @@ return user;
 
 Both `betterr` and `betterrSync` are generic.
 
-- The callback return type must be assignable to the first generic parameter (for `data`). It defaults to the callback return type
+- The callback return type must be assignable to the first generic parameter (for `data`). It defaults to the callback return type.
 - The second generic parameter (for error) must extend the `Error` object. It defaults to `Error`.
 
 ```ts
