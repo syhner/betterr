@@ -1,27 +1,27 @@
-export type BetterrReturn<Data, Err extends Error = Error> =
-  | { data: Data; err: null }
-  | { data: null; err: Err };
+export type BetterrReturn<TData, TError> =
+  | { data: TData; err: null }
+  | { data: null; err: TError };
 
-export const betterr = async <Data>(
-  callback: () => Data | Promise<Data>,
-): Promise<BetterrReturn<Data, Error>> => {
+export const betterr = async <TData, TError = Error>(
+  callback: () => TData | Promise<TData>,
+): Promise<BetterrReturn<TData, TError>> => {
   try {
     const data = await callback();
     return { data, err: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(`${error}`);
-    return { data: null, err };
+    return { data: null, err } as { data: null; err: TError };
   }
 };
 
-export const betterrSync = <Data>(
-  callback: () => Data,
-): BetterrReturn<Data, Error> => {
+export const betterrSync = <TData, TError = Error>(
+  callback: () => TData,
+): BetterrReturn<TData, TError> => {
   try {
     const data = callback();
     return { data, err: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(`${error}`);
-    return { data: null, err };
+    return { data: null, err } as { data: null; err: TError };
   }
 };

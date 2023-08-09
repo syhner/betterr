@@ -1,4 +1,4 @@
-class ExtendedError extends Error {
+export class ExtendedError extends Error {
   constructor(public message: string) {
     super();
   }

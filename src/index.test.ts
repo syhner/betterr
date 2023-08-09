@@ -97,6 +97,67 @@ describe('betterr', () => {
         Expect<Equal<typeof err, null>>,
       ];
     });
+
+    it('Types are correct when using a generic parameter for data', async () => {
+      const { data, err } = await betterr<string>(() =>
+        utils.throwExtendedError(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, string | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, string>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Types are correct when using generic parameters for data and error', async () => {
+      const { data, err } = await betterr<string, utils.ExtendedError>(() =>
+        utils.throwExtendedError(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, string | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, string>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Type error when the callback return type is not assignable to the generic parameter for data', async () => {
+      const { data, err } = await betterr<number>(() =>
+        // @ts-expect-error - The return type of the callback is not assignable to the generic parameter for data
+        utils.throwExtendedError(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, number | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, number>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
   });
 
   describe('Synchronous functions', () => {
@@ -174,6 +235,67 @@ describe('betterr', () => {
         Expect<Equal<typeof err, null>>,
       ];
     });
+
+    it('Types are correct when using a generic parameter for data', async () => {
+      const { data, err } = await betterr<string>(() =>
+        utils.throwExtendedErrorSync(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, string | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, string>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Types are correct when using generic parameters for data and error', async () => {
+      const { data, err } = await betterr<string, utils.ExtendedError>(() =>
+        utils.throwExtendedErrorSync(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, string | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, string>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Type error when the callback return type is not assignable to the generic parameter for data', async () => {
+      const { data, err } = await betterr<number>(() =>
+        // @ts-expect-error - The return type of the callback is not assignable to the generic parameter for data
+        utils.throwExtendedErrorSync(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, number | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, number>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
   });
 });
 
@@ -248,6 +370,67 @@ describe('betterrSync', () => {
       if (err) return;
       type _testsAfter = [
         Expect<Equal<typeof data, typeof message>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Types are correct when using a generic parameter for data', async () => {
+      const { data, err } = await betterrSync<string>(() =>
+        utils.throwExtendedErrorSync(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, string | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, string>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Types are correct when using generic parameters for data and error', async () => {
+      const { data, err } = await betterrSync<string, utils.ExtendedError>(() =>
+        utils.throwExtendedErrorSync(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, string | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, string>>,
+        Expect<Equal<typeof err, null>>,
+      ];
+    });
+
+    it('Type error when the callback return type is not assignable to the generic parameter for data', async () => {
+      const { data, err } = await betterrSync<number>(() =>
+        // @ts-expect-error - The return type of the callback is not assignable to the generic parameter for data
+        utils.throwExtendedErrorSync(message),
+      );
+
+      expect(data).toBe(null);
+      expect(err).toBeInstanceOf(Error);
+      expect(err?.message).to.equal(message);
+
+      type _testsBefore = [
+        Expect<Equal<typeof data, number | null>>,
+        Expect<Equal<typeof err, Error | null>>,
+      ];
+      if (err) return;
+      type _testsAfter = [
+        Expect<Equal<typeof data, number>>,
         Expect<Equal<typeof err, null>>,
       ];
     });
