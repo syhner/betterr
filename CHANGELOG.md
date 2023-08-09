@@ -1,5 +1,11 @@
 # betterr
 
+## 3.0.1
+
+### Patch Changes
+
+- 6d86d75: README tweak
+
 ## 3.0.0
 
 ### Major Changes
