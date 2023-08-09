@@ -26,18 +26,16 @@ $ npm install betterr
 import { betterr, betterrSync } from 'betterr';
 // const { betterr, betterrSync } = require('betterr');
 
-async function main() {
-  const { data: user, err } = await betterr(() => getRandomUser());
-  //            ^?    ^? user: User | null, err: Error | null
+const { data: user, err } = await betterr(() => getRandomUser());
+//            ^?    ^? user: User | null, err: Error | null
 
-  if (err) {
-    // ^? err: Error
-    return;
-  }
-
-  return user;
-  //     ^? user: User
+if (err) {
+  // ^? err: Error
+  return;
 }
+
+return user;
+//     ^? user: User
 ```
 
 - `betterr` can be used with both asynchronous and synchronous callbacks
