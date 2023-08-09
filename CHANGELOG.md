@@ -1,5 +1,11 @@
 # betterr
 
+## 2.0.9
+
+### Patch Changes
+
+- 70a8959: README code example update
+
 ## 2.0.8
 
 ### Patch Changes
