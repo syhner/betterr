@@ -13,7 +13,7 @@ A better way to handle errors
 - **Both data and errors are non-nullable**, once an early return occurs if the other is null
 - **Both data and errors are available at the top level**, unlike with try...catch or promises
 - **Work with errors that are always `Error` objects by default**, without compromising type-safety, unlike with try...catch or promises
-- **TypeScript support** with optional generic parameters for data and error types
+- **TypeScript support** with optional generic parameters for `data` and `error` types
 
 ## Installation
 
@@ -44,7 +44,10 @@ return user;
 
 ## TypeScript
 
-Both `betterr` and `betterrSync` are generic, so the type of `data` and `error` can be provided. The callback return type must be assignable to the first generic parameter (for data).
+Both `betterr` and `betterrSync` are generic.
+
+- The callback return type must be assignable to the first generic parameter (for `data`). It defaults to the callback return type
+- The second generic parameter (for error) must extend the `Error` object. It defaults to `Error`.
 
 ```ts
 /**
