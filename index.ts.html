@@ -121,7 +121,7 @@
   | { data: TData; err: null }
   | { data: null; err: TError };
 &nbsp;
-export const betterr = async &lt;TData, TError = Error&gt;(
+export const betterr = async &lt;TData, TError extends Error = Error&gt;(
   callback: () =&gt; TData | Promise&lt;TData&gt;,
 ): Promise&lt;BetterrReturn&lt;TData, TError&gt;&gt; =&gt; {
   try {
@@ -133,7 +133,7 @@ export const betterr = async &lt;TData, TError = Error&gt;(
   }
 };
 &nbsp;
-export const betterrSync = &lt;TData, TError = Error&gt;(
+export const betterrSync = &lt;TData, TError extends Error = Error&gt;(
   callback: () =&gt; TData,
 ): BetterrReturn&lt;TData, TError&gt; =&gt; {
   try {
