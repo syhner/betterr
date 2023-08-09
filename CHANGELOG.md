@@ -1,5 +1,11 @@
 # betterr
 
+## 3.0.0
+
+### Major Changes
+
+- 722361e: TypeScript support for typing errors with generic parameters
+
 ## 2.0.9
 
 ### Patch Changes
