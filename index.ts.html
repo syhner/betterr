@@ -97,51 +97,51 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export type BetterrReturn&lt;Data, Err extends Error = Error&gt; =
-  | { data: Data; err: null }
-  | { data: null; err: Err };
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export type BetterrReturn&lt;TData, TError&gt; =
+  | { data: TData; err: null }
+  | { data: null; err: TError };
 &nbsp;
-export const betterr = async &lt;Data&gt;(
-  callback: () =&gt; Data | Promise&lt;Data&gt;,
-): Promise&lt;BetterrReturn&lt;Data, Error&gt;&gt; =&gt; {
+export const betterr = async &lt;TData, TError = Error&gt;(
+  callback: () =&gt; TData | Promise&lt;TData&gt;,
+): Promise&lt;BetterrReturn&lt;TData, TError&gt;&gt; =&gt; {
   try {
     const data = await callback();
     return { data, err: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(`${error}`);
-    return { data: null, err };
+    return { data: null, err } as { data: null; err: TError };
   }
 };
 &nbsp;
-export const betterrSync = &lt;Data&gt;(
-  callback: () =&gt; Data,
-): BetterrReturn&lt;Data, Error&gt; =&gt; {
+export const betterrSync = &lt;TData, TError = Error&gt;(
+  callback: () =&gt; TData,
+): BetterrReturn&lt;TData, TError&gt; =&gt; {
   try {
     const data = callback();
     return { data, err: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(`${error}`);
-    return { data: null, err };
+    return { data: null, err } as { data: null; err: TError };
   }
 };
 &nbsp;</pre></td></tr></table></pre>
