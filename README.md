@@ -27,16 +27,13 @@ $ npm install betterr
 import { betterr, betterrSync } from 'betterr';
 // const { betterr, betterrSync } = require('betterr');
 
-const { data: user, err } = await betterr(() => getRandomUser());
-//            ^?    ^? user: User | null, err: Error | null
+const { data: user, err } = await betterr(() => getUserOrThrow());
+// user: User | null, err: Error | null
 
-if (err) {
-  // ^? err: Error
-  return;
-}
+if (err) return;
 
 return user;
-//     ^? user: User
+// user: User
 ```
 
 - `betterr` can be used with both asynchronous and synchronous callbacks
@@ -51,13 +48,12 @@ Both `betterr` and `betterrSync` are generic.
 
 ```ts
 /**
- * const betterrSync: <TData, TError = Error>(callback: () => TData) =>
+ * const betterrSync: <TData, TError extends Error = Error>
+ * (callback: () => TData) =>
  * | { data: TData; err: null }
  * | { data: null; err: TError }
  */
 
-const { data, err } = betterrSync<User, MyError>(() => ({
-  //    ^?    ^? data: User | null, err: MyError | null
-  userId: 1,
-}));
+const { data, err } = betterrSync<User, MyError>(() => ({ id: 1 }));
+// data: User | null, err: MyError | null
 ```
