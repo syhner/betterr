@@ -1,5 +1,11 @@
 # betterr
 
+## 4.0.1
+
+### Patch Changes
+
+- 9337607: README tweaks (TError extends Error)
+
 ## 4.0.0
 
 ### Major Changes
