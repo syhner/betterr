@@ -10,7 +10,7 @@ export const betterr = async <TData, TError extends Error = Error>(
     return { data, err: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(`${error}`);
-    return { data: null, err } as { data: null; err: TError };
+    return { data: null, err: err as TError };
   }
 };
 
@@ -22,6 +22,6 @@ export const betterrSync = <TData, TError extends Error = Error>(
     return { data, err: null };
   } catch (error) {
     const err = error instanceof Error ? error : new Error(`${error}`);
-    return { data: null, err } as { data: null; err: TError };
+    return { data: null, err: err as TError };
   }
 };
