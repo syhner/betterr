@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { betterr, betterrSync } from '.';
-import { Expect, Equal } from '../tests/types';
-import * as utils from '../tests/utils';
+import { Expect, Equal } from './testing/types';
+import * as utils from './testing/utils';
 
 const message = 'message' as const;
 
