@@ -1,5 +1,11 @@
 # betterr
 
+## 5.0.0
+
+### Major Changes
+
+- d2f7436: Renamed BetterrReturn to BetterrResult for clarity
+
 ## 4.0.1
 
 ### Patch Changes
