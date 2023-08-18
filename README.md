@@ -54,6 +54,6 @@ Both `betterr` and `betterrSync` are generic.
  * | { data: null; err: TError }
  */
 
-const { data, err } = betterrSync<User, MyError>(() => ({ id: 1 }));
-// data: User | null, err: MyError | null
+const { data, err } = betterrSync<User, RangeError>(() => ({ id: 1 }));
+// data: User | null, err: RangeError | null
 ```
