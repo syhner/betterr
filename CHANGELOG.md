@@ -1,5 +1,11 @@
 # betterr
 
+## 5.1.0
+
+### Minor Changes
+
+- a8caf1d: update README
+
 ## 5.0.0
 
 ### Major Changes
