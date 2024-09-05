@@ -1,5 +1,11 @@
 # betterr
 
+## 6.0.0
+
+### Major Changes
+
+- d3e1d49: use a tuple return type instead of an object
+
 ## 5.1.0
 
 ### Minor Changes
