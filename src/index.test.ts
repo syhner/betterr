@@ -8,7 +8,7 @@ const message = 'message' as const;
 describe('betterr', () => {
   describe('Asynchronous functions', () => {
     it('When no error is thrown, data should exist and error should be null', async () => {
-      const { data, err } = await betterr(() => utils.echo(message));
+      const [data, err] = await betterr(() => utils.echo(message));
 
       expect(data).to.equal(message);
       expect(err).toBe(null);
@@ -25,7 +25,7 @@ describe('betterr', () => {
     });
 
     it('When an asynchronous error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => utils.throwError(message));
+      const [data, err] = await betterr(() => utils.throwError(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -43,7 +43,7 @@ describe('betterr', () => {
     });
 
     it('When an asynchronous extended error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() =>
+      const [data, err] = await betterr(() =>
         utils.throwExtendedError(message),
       );
 
@@ -63,7 +63,7 @@ describe('betterr', () => {
     });
 
     it('When an asynchronous error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => utils.throwError(message));
+      const [data, err] = await betterr(() => utils.throwError(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -81,7 +81,7 @@ describe('betterr', () => {
     });
 
     it('When an asynchronous non-error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => utils.throwNonError(message));
+      const [data, err] = await betterr(() => utils.throwNonError(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -99,7 +99,7 @@ describe('betterr', () => {
     });
 
     it('Types are correct when using a generic parameter for data', async () => {
-      const { data, err } = await betterr<string>(() =>
+      const [data, err] = await betterr<string>(() =>
         utils.throwExtendedError(message),
       );
 
@@ -119,7 +119,7 @@ describe('betterr', () => {
     });
 
     it('Types are correct when using generic parameters for data and error', async () => {
-      const { data, err } = await betterr<string, utils.ExtendedError>(() =>
+      const [data, err] = await betterr<string, utils.ExtendedError>(() =>
         utils.throwExtendedError(message),
       );
 
@@ -139,7 +139,7 @@ describe('betterr', () => {
     });
 
     it('Type error when the callback return type is not assignable to the generic parameter for data', async () => {
-      const { data, err } = await betterr<number>(() =>
+      const [data, err] = await betterr<number>(() =>
         // @ts-expect-error - The return type of the callback is not assignable to the generic parameter for data
         utils.throwExtendedError(message),
       );
@@ -162,7 +162,7 @@ describe('betterr', () => {
 
   describe('Synchronous functions', () => {
     it('When no error is thrown, data should exist and error should be null', async () => {
-      const { data, err } = await betterr(() => utils.echoSync(message));
+      const [data, err] = await betterr(() => utils.echoSync(message));
 
       expect(data).to.equal(message);
       expect(err).toBe(null);
@@ -179,7 +179,7 @@ describe('betterr', () => {
     });
 
     it('When a synchronous error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() => utils.throwErrorSync(message));
+      const [data, err] = await betterr(() => utils.throwErrorSync(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -197,7 +197,7 @@ describe('betterr', () => {
     });
 
     it('When a synchronous extended error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() =>
+      const [data, err] = await betterr(() =>
         utils.throwExtendedErrorSync(message),
       );
 
@@ -217,9 +217,7 @@ describe('betterr', () => {
     });
 
     it('When a synchronous non-error is thrown, data should be null and error should exist', async () => {
-      const { data, err } = await betterr(() =>
-        utils.throwNonErrorSync(message),
-      );
+      const [data, err] = await betterr(() => utils.throwNonErrorSync(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -237,7 +235,7 @@ describe('betterr', () => {
     });
 
     it('Types are correct when using a generic parameter for data', async () => {
-      const { data, err } = await betterr<string>(() =>
+      const [data, err] = await betterr<string>(() =>
         utils.throwExtendedErrorSync(message),
       );
 
@@ -257,7 +255,7 @@ describe('betterr', () => {
     });
 
     it('Types are correct when using generic parameters for data and error', async () => {
-      const { data, err } = await betterr<string, utils.ExtendedError>(() =>
+      const [data, err] = await betterr<string, utils.ExtendedError>(() =>
         utils.throwExtendedErrorSync(message),
       );
 
@@ -277,7 +275,7 @@ describe('betterr', () => {
     });
 
     it('Type error when the callback return type is not assignable to the generic parameter for data', async () => {
-      const { data, err } = await betterr<number>(() =>
+      const [data, err] = await betterr<number>(() =>
         // @ts-expect-error - The return type of the callback is not assignable to the generic parameter for data
         utils.throwExtendedErrorSync(message),
       );
@@ -302,7 +300,7 @@ describe('betterr', () => {
 describe('betterrSync', () => {
   describe('Synchronous functions', () => {
     it('When no error is thrown, data should exist and error should be null', () => {
-      const { data, err } = betterrSync(() => utils.echoSync(message));
+      const [data, err] = betterrSync(() => utils.echoSync(message));
 
       expect(data).to.equal(message);
       expect(err).toBe(null);
@@ -319,7 +317,7 @@ describe('betterrSync', () => {
     });
 
     it('When a synchronous error is thrown, data should be null and error should exist', () => {
-      const { data, err } = betterrSync(() => utils.throwErrorSync(message));
+      const [data, err] = betterrSync(() => utils.throwErrorSync(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -337,7 +335,7 @@ describe('betterrSync', () => {
     });
 
     it('When a synchronous extended error is thrown, data should be null and error should exist', () => {
-      const { data, err } = betterrSync(() =>
+      const [data, err] = betterrSync(() =>
         utils.throwExtendedErrorSync(message),
       );
 
@@ -357,7 +355,7 @@ describe('betterrSync', () => {
     });
 
     it('When a synchronous non-error is thrown, data should be null and error should exist', () => {
-      const { data, err } = betterrSync(() => utils.throwNonErrorSync(message));
+      const [data, err] = betterrSync(() => utils.throwNonErrorSync(message));
 
       expect(data).toBe(null);
       expect(err).toBeInstanceOf(Error);
@@ -375,7 +373,7 @@ describe('betterrSync', () => {
     });
 
     it('Types are correct when using a generic parameter for data', async () => {
-      const { data, err } = await betterrSync<string>(() =>
+      const [data, err] = await betterrSync<string>(() =>
         utils.throwExtendedErrorSync(message),
       );
 
@@ -395,7 +393,7 @@ describe('betterrSync', () => {
     });
 
     it('Types are correct when using generic parameters for data and error', async () => {
-      const { data, err } = await betterrSync<string, utils.ExtendedError>(() =>
+      const [data, err] = await betterrSync<string, utils.ExtendedError>(() =>
         utils.throwExtendedErrorSync(message),
       );
 
@@ -415,7 +413,7 @@ describe('betterrSync', () => {
     });
 
     it('Type error when the callback return type is not assignable to the generic parameter for data', async () => {
-      const { data, err } = await betterrSync<number>(() =>
+      const [data, err] = await betterrSync<number>(() =>
         // @ts-expect-error - The return type of the callback is not assignable to the generic parameter for data
         utils.throwExtendedErrorSync(message),
       );

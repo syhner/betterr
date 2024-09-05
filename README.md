@@ -25,7 +25,7 @@ $ npm install betterr
 ```ts
 import { betterr } from 'betterr'; // const { betterr } = require('betterr');
 
-const { data: user, err } = await betterr(() => getUserWithId(1));
+const [user, err] = await betterr(() => getUserWithId(1));
 // user: User | null, err: Error | null
 ```
 
@@ -46,7 +46,7 @@ const { data: user, err } = await betterr(() => getUserWithId(1));
 
 ## Explanation
 
-`betterr` / `betterSync` execute a callback and return an object with `data` (callback return value) and `err` (error during execution), one of which will be null depending on the success of the callback.
+`betterr` / `betterSync` execute a callback and return a tuple with `data` (callback return value) and `err` (error during execution), one of which will be null depending on the success of the callback.
 
 - `betterr` can be used with both asynchronous and synchronous callbacks.
 
@@ -62,11 +62,9 @@ Both `betterr` and `betterrSync` are generic.
 ```ts
 /**
  * const betterrSync: <TData, TError extends Error = Error>
- * (callback: () => TData) =>
- * | { data: TData; err: null }
- * | { data: null; err: TError }
+ * (callback: () => TData) => [TData, null] | [null, TError]
  */
 
-const { data, err } = betterrSync<User, RangeError>(() => ({ id: 1 }));
+const [user, err] = betterrSync<User, RangeError>(() => ({ id: 1 }));
 // data: User | null, err: RangeError | null
 ```
